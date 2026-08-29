@@ -1,4 +1,4 @@
-name: 🚀 Update GitHub Projects
+name: Update GitHub Projects
 
 on:
   schedule:
@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🐍 Generate Repository Showcase
+      - name: Generate Repository Showcase
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: madhavtripathi93
@@ -39,7 +39,6 @@ jobs:
           page = 1
 
           while True:
-
               url = (
                   f"https://api.github.com/users/{username}/repos"
                   f"?visibility=public"
@@ -74,24 +73,16 @@ jobs:
 
               page += 1
 
-
           # Remove profile repository, forks, and archived repositories
           repos = [
-
               repo for repo in repos
-
               if repo["name"].lower() != profile_repo.lower()
-
               and not repo["fork"]
-
               and not repo["archived"]
-
           ]
 
-
-          # Language → color mapping
+          # Language color mapping
           language_colors = {
-
               "Python": "3776AB",
               "C++": "00599C",
               "C": "A8B9CC",
@@ -102,34 +93,27 @@ jobs:
               "CSS": "1572B6",
               "Shell": "121011",
               "Jupyter Notebook": "F37626"
-
           }
-
 
           lines = []
 
-          # Header
           lines.append('<div align="center">')
           lines.append('')
-          lines.append('### 🌟 Explore My Public Projects')
+          lines.append('### Public Projects')
           lines.append('')
-          lines.append('💡 *Automatically updated with my latest work*')
+          lines.append('*Automatically updated with my latest work.*')
           lines.append('')
           lines.append('</div>')
           lines.append('')
 
-
           if not repos:
-
               lines.append(
-                  '> 🚧 **New projects are coming soon. Stay tuned!**'
+                  '> **New projects will appear here soon.**'
               )
 
-
-          for index, repo in enumerate(repos, start=1):
+          for repo in repos:
 
               name = repo["name"]
-
               url = repo["html_url"]
 
               description = (
@@ -137,40 +121,28 @@ jobs:
                   or "A project built as part of my development journey."
               )
 
-              language = (
-                  repo["language"]
-                  or "Code"
-              )
-
+              language = repo["language"] or "Code"
               stars = repo["stargazers_count"]
-
               forks = repo["forks_count"]
-
               updated = repo["updated_at"][:10]
 
-
-              # Clean markdown-breaking characters
+              # Clean Markdown-breaking characters
               description = description.replace("|", "-")
               description = description.replace("\n", " ")
               description = description.replace("\r", " ")
 
-
-              # Get language badge color
               color = language_colors.get(
                   language,
                   "6366F1"
               )
 
-
-              # URL-safe language
               encoded_language = quote(language)
-
 
               lines.append('---')
               lines.append('')
 
               lines.append(
-                  f'## 🚀 [{name}]({url})'
+                  f'## [{name}]({url})'
               )
 
               lines.append('')
@@ -183,34 +155,33 @@ jobs:
 
               lines.append('<p>')
 
-              # Language Badge
+              # Language badge
               lines.append(
                   f'<img src="https://img.shields.io/badge/'
                   f'{encoded_language}-{color}'
-                  f'?style=for-the-badge'
+                  f'?style=flat-square'
                   f'&logoColor=white" />'
               )
 
-              # Stars Badge
+              # Stars badge
               lines.append(
                   f'<img src="https://img.shields.io/badge/'
                   f'Stars-{stars}-F5C518'
-                  f'?style=for-the-badge'
+                  f'?style=flat-square'
                   f'&logo=github'
                   f'&logoColor=white" />'
               )
 
-              # Fork Badge
+              # Forks badge
               lines.append(
                   f'<img src="https://img.shields.io/badge/'
                   f'Forks-{forks}-6366F1'
-                  f'?style=for-the-badge'
+                  f'?style=flat-square'
                   f'&logo=git'
                   f'&logoColor=white" />'
               )
 
               lines.append('</p>')
-
               lines.append('')
 
               lines.append(
@@ -226,26 +197,21 @@ jobs:
               lines.append('')
 
               lines.append(
-                  f'🕒 **Last updated:** `{updated}`'
+                  f'Last updated: `{updated}`'
               )
 
               lines.append('')
 
-
           repo_section = "\n".join(lines)
 
-
           readme_path = "README.md"
-
 
           with open(
               readme_path,
               "r",
               encoding="utf-8"
           ) as file:
-
               content = file.read()
-
 
           pattern = (
               r"<!-- REPO-LIST:START -->"
@@ -253,67 +219,42 @@ jobs:
               r"<!-- REPO-LIST:END -->"
           )
 
-
           replacement = (
-
               "<!-- REPO-LIST:START -->\n"
-
               + repo_section
-
               + "\n<!-- REPO-LIST:END -->"
-
           )
-
 
           updated_content = re.sub(
-
               pattern,
-
               replacement,
-
               content,
-
               flags=re.DOTALL
-
           )
-
 
           with open(
               readme_path,
               "w",
               encoding="utf-8"
           ) as file:
-
               file.write(updated_content)
 
-
           print(
-              f"✨ Successfully updated {len(repos)} repositories!"
+              f"Successfully updated {len(repos)} repositories."
           )
 
           PYTHON
 
-
-      - name: 💾 Commit Changes
-
+      - name: Commit Changes
         run: |
-
           git config --global user.name "github-actions[bot]"
-
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
 
           git add README.md
 
-
           if git diff --cached --quiet; then
-
-            echo "✨ Everything is already up to date!"
-
+            echo "Everything is already up to date."
           else
-
-            git commit -m "✨ Auto-update project showcase"
-
+            git commit -m "chore: update project showcase"
             git push
-
           fi
