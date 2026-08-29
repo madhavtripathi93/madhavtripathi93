@@ -23,6 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: madhavtripathi93
           PROFILE_REPO: madhavtripathi93
+
         run: |
           python << 'PYTHON'
           import os
@@ -39,7 +40,7 @@ jobs:
           page = 1
 
           while True:
-              url = (
+              api_url = (
                   f"https://api.github.com/users/{username}/repos"
                   f"?visibility=public"
                   f"&sort=updated"
@@ -48,16 +49,13 @@ jobs:
                   f"&page={page}"
               )
 
-              request = urllib.request.Request(url)
-
-              request.add_header(
-                  "Accept",
-                  "application/vnd.github+json"
-              )
-
-              request.add_header(
-                  "Authorization",
-                  f"Bearer {token}"
+              request = urllib.request.Request(
+                  api_url,
+                  headers={
+                      "Accept": "application/vnd.github+json",
+                      "Authorization": f"Bearer {token}",
+                      "X-GitHub-Api-Version": "2022-11-28"
+                  }
               )
 
               with urllib.request.urlopen(request) as response:
@@ -73,7 +71,8 @@ jobs:
 
               page += 1
 
-          # Remove profile repository, forks, and archived repositories
+
+          # Keep only active, original public repositories.
           repos = [
               repo for repo in repos
               if repo["name"].lower() != profile_repo.lower()
@@ -81,130 +80,77 @@ jobs:
               and not repo["archived"]
           ]
 
-          # Language color mapping
-          language_colors = {
-              "Python": "3776AB",
-              "C++": "00599C",
-              "C": "A8B9CC",
-              "JavaScript": "F7DF1E",
-              "TypeScript": "3178C6",
-              "Java": "ED8B00",
-              "HTML": "E34F26",
-              "CSS": "1572B6",
-              "Shell": "121011",
-              "Jupyter Notebook": "F37626"
-          }
 
           lines = []
 
-          lines.append('<div align="center">')
-          lines.append('')
-          lines.append('### Public Projects')
-          lines.append('')
-          lines.append('*Automatically updated with my latest work.*')
-          lines.append('')
-          lines.append('</div>')
-          lines.append('')
 
           if not repos:
-              lines.append(
-                  '> **New projects will appear here soon.**'
-              )
 
-          for repo in repos:
+              lines.append('<div align="center">')
+              lines.append('')
+              lines.append('*Projects will appear here automatically.*')
+              lines.append('')
+              lines.append('</div>')
 
-              name = repo["name"]
-              url = repo["html_url"]
+          else:
 
-              description = (
-                  repo["description"]
-                  or "A project built as part of my development journey."
-              )
-
-              language = repo["language"] or "Code"
-              stars = repo["stargazers_count"]
-              forks = repo["forks_count"]
-              updated = repo["updated_at"][:10]
-
-              # Clean Markdown-breaking characters
-              description = description.replace("|", "-")
-              description = description.replace("\n", " ")
-              description = description.replace("\r", " ")
-
-              color = language_colors.get(
-                  language,
-                  "6366F1"
-              )
-
-              encoded_language = quote(language)
-
-              lines.append('---')
+              lines.append('<div align="center">')
               lines.append('')
 
-              lines.append(
-                  f'## [{name}]({url})'
-              )
 
-              lines.append('')
+              for index, repo in enumerate(repos):
 
-              lines.append(
-                  f'> {description}'
-              )
+                  name = repo["name"]
+                  repo_url = repo["html_url"]
 
-              lines.append('')
+                  # URL-safe repository name
+                  encoded_name = quote(name, safe="")
 
-              lines.append('<p>')
 
-              # Language badge
-              lines.append(
-                  f'<img src="https://img.shields.io/badge/'
-                  f'{encoded_language}-{color}'
-                  f'?style=flat-square'
-                  f'&logoColor=white" />'
-              )
+                  # GitHub README Stats pinned repository card
+                  card_url = (
+                      "https://github-readme-stats.vercel.app/api/pin/"
+                      f"?username={username}"
+                      f"&repo={encoded_name}"
+                      "&theme=tokyonight"
+                      "&hide_border=true"
+                  )
 
-              # Stars badge
-              lines.append(
-                  f'<img src="https://img.shields.io/badge/'
-                  f'Stars-{stars}-F5C518'
-                  f'?style=flat-square'
-                  f'&logo=github'
-                  f'&logoColor=white" />'
-              )
 
-              # Forks badge
-              lines.append(
-                  f'<img src="https://img.shields.io/badge/'
-                  f'Forks-{forks}-6366F1'
-                  f'?style=flat-square'
-                  f'&logo=git'
-                  f'&logoColor=white" />'
-              )
+                  lines.append(
+                      f'<a href="{repo_url}">'
+                  )
 
-              lines.append('</p>')
-              lines.append('')
+                  lines.append(
+                      f'<img src="{card_url}" '
+                      f'alt="{name}" />'
+                  )
 
-              lines.append(
-                  f'[![View Repository]'
-                  f'(https://img.shields.io/badge/'
-                  f'VIEW%20SOURCE%20CODE-181717'
-                  f'?style=for-the-badge'
-                  f'&logo=github'
-                  f'&logoColor=white)]'
-                  f'({url})'
-              )
+                  lines.append(
+                      '</a>'
+                  )
 
-              lines.append('')
 
-              lines.append(
-                  f'Last updated: `{updated}`'
-              )
+                  # Two cards per row
+                  if index % 2 == 1:
+                      lines.append('<br/>')
+                      lines.append('')
 
-              lines.append('')
+
+              # If there is an odd number of repositories,
+              # add spacing after the final card.
+              if len(repos) % 2 == 1:
+                  lines.append('')
+
+
+              lines.append('</div>')
+
 
           repo_section = "\n".join(lines)
 
+
           readme_path = "README.md"
+
 
           with open(
               readme_path,
@@ -213,17 +159,20 @@ jobs:
           ) as file:
               content = file.read()
 
+
           pattern = (
               r"<!-- REPO-LIST:START -->"
               r".*?"
               r"<!-- REPO-LIST:END -->"
           )
 
+
           replacement = (
               "<!-- REPO-LIST:START -->\n"
               + repo_section
               + "\n<!-- REPO-LIST:END -->"
           )
+
 
           updated_content = re.sub(
               pattern,
@@ -232,18 +181,23 @@ jobs:
               flags=re.DOTALL
           )
 
-          with open(
-              readme_path,
-              "w",
-              encoding="utf-8"
-          ) as file:
-              file.write(updated_content)
 
-          print(
-              f"Successfully updated {len(repos)} repositories."
-          )
+          if updated_content == content:
+              print("README repository section is already up to date.")
+          else:
+              with open(
+                  readme_path,
+                  "w",
+                  encoding="utf-8"
+              ) as file:
+                  file.write(updated_content)
+
+              print(
+                  f"Successfully updated {len(repos)} repositories."
+              )
 
           PYTHON
+
 
       - name: Commit Changes
         run: |
@@ -253,7 +207,7 @@ jobs:
           git add README.md
 
           if git diff --cached --quiet; then
-            echo "Everything is already up to date."
+            echo "No README changes detected."
           else
             git commit -m "chore: update project showcase"
             git push
