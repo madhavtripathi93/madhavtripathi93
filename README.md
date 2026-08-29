@@ -62,6 +62,45 @@ Currently strengthening **Data Structures & Algorithms in C++** and **System Des
 </div>
 
 <!-- REPO-LIST:START -->
+<div align="center">
+
+### 🌟 Explore My Public Projects
+
+💡 *Automatically updated with my latest work*
+
+</div>
+
+---
+
+## 🚀 [event-ticket-booking](https://github.com/madhavtripathi93/event-ticket-booking)
+
+> A project built as part of my development journey.
+
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logoColor=white" />
+<img src="https://img.shields.io/badge/Stars-0-F5C518?style=for-the-badge&logo=github&logoColor=white" />
+<img src="https://img.shields.io/badge/Forks-0-6366F1?style=for-the-badge&logo=git&logoColor=white" />
+</p>
+
+[![View Repository](https://img.shields.io/badge/VIEW%20SOURCE%20CODE-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/madhavtripathi93/event-ticket-booking)
+
+🕒 **Last updated:** `2026-08-25`
+
+---
+
+## 🚀 [DevOps-Project](https://github.com/madhavtripathi93/DevOps-Project)
+
+> A project built as part of my development journey.
+
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logoColor=white" />
+<img src="https://img.shields.io/badge/Stars-0-F5C518?style=for-the-badge&logo=github&logoColor=white" />
+<img src="https://img.shields.io/badge/Forks-0-6366F1?style=for-the-badge&logo=git&logoColor=white" />
+</p>
+
+[![View Repository](https://img.shields.io/badge/VIEW%20SOURCE%20CODE-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/madhavtripathi93/DevOps-Project)
+
+🕒 **Last updated:** `2026-05-04`
 
 <!-- REPO-LIST:END -->
 
