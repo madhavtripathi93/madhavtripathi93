@@ -9,8 +9,8 @@ Currently strengthening **Data Structures & Algorithms in C++** and **System Des
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/madhav-tripathi-81534b29a/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:tripathimadhav8318@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/madhav-tripathi-81534b29a/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tripathimadhav8318@gmail.com)
 
 ---
 
@@ -18,36 +18,36 @@ Currently strengthening **Data Structures & Algorithms in C++** and **System Des
 
 **Languages**
 
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=plastic\&logo=c%2B%2B\&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3670A0?style=plastic\&logo=python\&logoColor=ffdd54)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=plastic&logo=c%2B%2B&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3670A0?style=plastic&logo=python&logoColor=ffdd54)
 
 **Backend**
 
-![Flask](https://img.shields.io/badge/Flask-000000?style=plastic\&logo=flask\&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-404D59?style=plastic\&logo=express\&logoColor=61DAFB)
-![NPM](https://img.shields.io/badge/NPM-CB3837?style=plastic\&logo=npm\&logoColor=white)
-![Nodemon](https://img.shields.io/badge/Nodemon-323330?style=plastic\&logo=nodemon\&logoColor=BBDEAD)
+![Flask](https://img.shields.io/badge/Flask-000000?style=plastic&logo=flask&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=plastic&logo=express&logoColor=61DAFB)
+![NPM](https://img.shields.io/badge/NPM-CB3837?style=plastic&logo=npm&logoColor=white)
+![Nodemon](https://img.shields.io/badge/Nodemon-323330?style=plastic&logo=nodemon&logoColor=BBDEAD)
 
 **Databases**
 
-![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=plastic\&logo=amazondynamodb\&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=plastic\&logo=mysql\&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=plastic\&logo=mongodb\&logoColor=white)
+![Amazon DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=plastic&logo=amazondynamodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=plastic&logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=plastic&logo=mongodb&logoColor=white)
 
 **Cloud & DevOps**
 
-![AWS](https://img.shields.io/badge/AWS-FF9900?style=plastic\&logo=amazon-aws\&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-0DB7ED?style=plastic\&logo=docker\&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=plastic\&logo=kubernetes\&logoColor=white)
-![Ansible](https://img.shields.io/badge/Ansible-1A1918?style=plastic\&logo=ansible\&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=plastic\&logo=grafana\&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=plastic&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-0DB7ED?style=plastic&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=plastic&logo=kubernetes&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-1A1918?style=plastic&logo=ansible&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=plastic&logo=grafana&logoColor=white)
 
 **Tools**
 
-![Git](https://img.shields.io/badge/Git-F05033?style=plastic\&logo=git\&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-121011?style=plastic\&logo=github\&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=plastic\&logo=postman\&logoColor=white)
-![Canva](https://img.shields.io/badge/Canva-00C4CC?style=plastic\&logo=canva\&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05033?style=plastic&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-121011?style=plastic&logo=github&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=plastic&logo=postman&logoColor=white)
+![Canva](https://img.shields.io/badge/Canva-00C4CC?style=plastic&logo=canva&logoColor=white)
 
 ---
 
@@ -62,52 +62,12 @@ Currently strengthening **Data Structures & Algorithms in C++** and **System Des
 </div>
 
 <!-- REPO-LIST:START -->
-<div align="center">
-
-### 🌟 Explore My Public Projects
-
-💡 *Automatically updated with my latest work*
-
-</div>
-
----
-
-## 🚀 [event-ticket-booking](https://github.com/madhavtripathi93/event-ticket-booking)
-
-> A project built as part of my development journey.
-
-<p>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/Stars-0-F5C518?style=for-the-badge&logo=github&logoColor=white" />
-<img src="https://img.shields.io/badge/Forks-0-6366F1?style=for-the-badge&logo=git&logoColor=white" />
-</p>
-
-[![View Repository](https://img.shields.io/badge/VIEW%20SOURCE%20CODE-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/madhavtripathi93/event-ticket-booking)
-
-🕒 **Last updated:** `2026-08-25`
-
----
-
-## 🚀 [DevOps-Project](https://github.com/madhavtripathi93/DevOps-Project)
-
-> A project built as part of my development journey.
-
-<p>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/Stars-0-F5C518?style=for-the-badge&logo=github&logoColor=white" />
-<img src="https://img.shields.io/badge/Forks-0-6366F1?style=for-the-badge&logo=git&logoColor=white" />
-</p>
-
-[![View Repository](https://img.shields.io/badge/VIEW%20SOURCE%20CODE-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/madhavtripathi93/DevOps-Project)
-
-🕒 **Last updated:** `2026-05-04`
-
 <!-- REPO-LIST:END -->
 
 ---
 
 <div align="center">
 
-![Profile Views](https://komarev.com/ghpvc/?username=madhavtripathi93\&label=Profile%20Views\&color=6366f1\&style=for-the-badge)
+![Profile Views](https://komarev.com/ghpvc/?username=madhavtripathi93&label=Profile%20Views&color=6366f1&style=for-the-badge)
 
 </div>
