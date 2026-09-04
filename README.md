@@ -64,13 +64,17 @@ Currently strengthening **Data Structures & Algorithms in C++** and **System Des
 <!-- REPO-LIST:START -->
 <div align="center">
 
+<a href="https://github.com/madhavtripathi93/MultiRAG-">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=madhavtripathi93&repo=MultiRAG-&theme=tokyonight&hide_border=true" alt="MultiRAG-" />
+</a>
 <a href="https://github.com/madhavtripathi93/event-ticket-booking">
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=madhavtripathi93&repo=event-ticket-booking&theme=tokyonight&hide_border=true" alt="event-ticket-booking" />
 </a>
+<br/>
+
 <a href="https://github.com/madhavtripathi93/DevOps-Project">
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=madhavtripathi93&repo=DevOps-Project&theme=tokyonight&hide_border=true" alt="DevOps-Project" />
 </a>
-<br/>
 
 </div>
 <!-- REPO-LIST:END -->
