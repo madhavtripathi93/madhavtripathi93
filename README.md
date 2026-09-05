@@ -64,6 +64,14 @@ Currently strengthening **Data Structures & Algorithms in C++** and **System Des
 <!-- REPO-LIST:START -->
 <div align="center">
 
+<a href="https://github.com/madhavtripathi93/RazorFlow">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=madhavtripathi93&repo=RazorFlow&theme=tokyonight&hide_border=true" alt="RazorFlow" />
+</a>
+<a href="https://github.com/madhavtripathi93/Portfolio">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=madhavtripathi93&repo=Portfolio&theme=tokyonight&hide_border=true" alt="Portfolio" />
+</a>
+<br/>
+
 <a href="https://github.com/madhavtripathi93/MultiRAG-">
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=madhavtripathi93&repo=MultiRAG-&theme=tokyonight&hide_border=true" alt="MultiRAG-" />
 </a>
